@@ -12,7 +12,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   api:
-    build: .
+    image: 0naveen/task-manager:latest
 
     ports:
       - "8000:8000"
