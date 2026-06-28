@@ -1,3 +1,13 @@
+import os
+
+# Set fallback environment variables for testing so Pydantic Settings doesn't fail
+# when running tests without a .env file (e.g., in CI environments).
+os.environ.setdefault("APP_NAME", "Todo API Test")
+os.environ.setdefault("DATABASE_URL", "sqlite:///:memory:")
+os.environ.setdefault("SECRET_KEY", "test-secret-key-test-secret-key-test-secret-key")
+os.environ.setdefault("ALGORITHM", "HS256")
+os.environ.setdefault("ACCESS_TOKEN_EXPIRE_MINUTES", "30")
+
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
