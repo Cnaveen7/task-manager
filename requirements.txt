@@ -1,0 +1,29 @@
+# FastAPI framework
+fastapi
+
+# ASGI server
+uvicorn
+
+# ORM
+sqlalchemy
+
+# Database migrations
+alembic
+
+# PostgreSQL driver
+psycopg[binary]
+
+# Configuration management
+pydantic-settings
+
+# JWT encode/decode
+python-jose[cryptography]
+
+# Password hashing
+passlib[bcrypt]
+
+# Load .env files
+python-dotenv
+
+# HTTP client (testing external APIs)
+httpx
