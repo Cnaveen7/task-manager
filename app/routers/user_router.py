@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.dependencies.database import get_db
@@ -18,7 +18,14 @@ def register(
     user_create: UserCreate,
     db: Session = Depends(get_db)
 ):
-    return register_user(
-        db=db,
-        user_create=user_create
-    )
+    try:
+        return register_user(
+            db=db,
+            user_create=user_create
+        )
+    except ValueError as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )
+

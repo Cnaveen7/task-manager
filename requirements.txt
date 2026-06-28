@@ -27,3 +27,8 @@ python-dotenv
 
 # HTTP client (testing external APIs)
 httpx
+
+# Testing framework
+pytest
+pytest-cov
+python-multipart

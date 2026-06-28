@@ -13,7 +13,7 @@ def create_user(db: Session, user_create: UserCreate, hashed_password: str) -> U
     )
 
     try:
-        db.create(user)
+        db.add(user)
         db.commit()
         db.refresh(user)
 
