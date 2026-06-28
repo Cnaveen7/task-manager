@@ -16,7 +16,7 @@ app.include_router(todo_router)
 
 
 @app.get("/")
-def root():
+def health():
     return {
-        "message": f"Welcome to {settings.app_name}"
+        "message": "CI/CD is working 🚀"
     }
