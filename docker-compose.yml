@@ -10,8 +10,11 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
   api:
+    build: .
     image: 0naveen/task-manager:latest
 
     ports:
